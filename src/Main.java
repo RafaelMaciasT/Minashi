@@ -25,12 +25,12 @@ public class Main {
 				
 				switch (accop) {
 				case 0:
-					JOptionPane.showMessageDialog(null, "Seleccion de inicio de cuenta");
+					JOptionPane.showMessageDialog(null, "Menu Empleado");
 					
-					String []empmenu= {"Empleado" , "Cliente","Salir"};
+					String []empmenu= {"Ver Stock" , "Control de Mineral","Seccion de Precios","Salir"};
 					int empop;
 					do {
-						empop=JOptionPane.showOptionDialog(null, "Selecciones el Tipo de Usuario", "Seleccion de Inicio", 0, 0, null, empmenu, empmenu[0]);
+						empop=JOptionPane.showOptionDialog(null, "Seleccion Acciones", "Menu Empleado", 0, 0, null, empmenu, empmenu[0]);
 						
 						switch (empop) {
 						case 0:
@@ -39,7 +39,9 @@ public class Main {
 
 						case 1:
 							break;
-						case 2: 
+						case 2:
+							break;
+						case 3:
 						default:
 							break;
 						}
