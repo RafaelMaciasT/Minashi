@@ -7,10 +7,10 @@ public class Main {
 
 		JOptionPane.showMessageDialog(null, "Mensaje de Main");
 		 
-		String [] Menu= {"Ingresar","Salir"};
+		String [] Menu= {"Ingresar", "Registrar","Salir"};
 		int opciones;
 		do {
-			opciones=JOptionPane.showOptionDialog(null, args, "Hola", null, 0, 0, Menu, Menu[0]);
+			opciones=JOptionPane.showOptionDialog(null, "Menu", "Opciones de menu", 0, 0, null, Menu, Menu[0]);
 			
 			
 		switch (opciones) {
@@ -19,8 +19,10 @@ public class Main {
 			break;
 
 		case 1:
+			
 			break;
 		case 2:
+			
 		default:
 			break;
 		}
