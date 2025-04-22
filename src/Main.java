@@ -6,6 +6,26 @@ public class Main {
 		// TODO Auto-generated method stub
 
 		JOptionPane.showMessageDialog(null, "Mensaje de Main");
+		 
+		String [] Menu= {"Ingresar","Salir"};
+		int opciones;
+		do {
+			opciones=JOptionPane.showOptionDialog(null, args, "Hola", null, 0, 0, Menu, Menu[0]);
+			
+			
+		switch (opciones) {
+		case 0:
+			
+			break;
+
+		case 1:
+			break;
+		case 2:
+		default:
+			break;
+		}
+		} while (opciones!=2);
+		
 	}
 
 }
