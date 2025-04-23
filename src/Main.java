@@ -45,11 +45,33 @@ public class Main {
 						default:
 							break;
 						}
-					} while (empop!=2);
+					} while (empop!=3);
 					break;
 				
 
 				case 1:
+					JOptionPane.showMessageDialog(null, "Menu Cliente");
+					
+					String []climenu= {"Seccion de Compra" , "","","Salir"};
+					int cliop;
+					do {
+						cliop=JOptionPane.showOptionDialog(null, "Seleccion Acciones", "Menu Empleado", 0, 0, null, climenu, climenu[0]);
+						
+						switch (cliop) {
+						case 0:
+							
+							break;
+
+						case 1:
+							break;
+						case 2:
+							break;
+						case 3:
+						default:
+							break;
+						}
+					} while (cliop!=3);
+					
 					break;
 				case 2: 
 				default:
