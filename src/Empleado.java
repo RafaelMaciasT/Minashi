@@ -31,5 +31,6 @@ public class Empleado extends Persona{
 	public static void agregar_mineral (LinkedList<Mineral>mines) {
 		String minename= JOptionPane.showInputDialog("Ingrese nombre de mineral");
 		 Mineral a = new Mineral(minename,"a",1);
+		 JOptionPane.showMessageDialog(null, a);
 	}
 }
