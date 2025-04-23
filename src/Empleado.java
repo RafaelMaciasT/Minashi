@@ -1,3 +1,6 @@
+import java.util.LinkedList;
+
+import javax.swing.JOptionPane;
 
 public class Empleado extends Persona{
 
@@ -25,5 +28,8 @@ public class Empleado extends Persona{
 		return "Empleado [nro_empleado=" + nro_empleado + ", pin=" + pin + "]";
 	}
 	
-	
+	public static void agregar_mineral (LinkedList<Mineral>mines) {
+		String minename= JOptionPane.showInputDialog("Ingrese nombre de mineral");
+		 Mineral a = new Mineral(minename,"a",1);
+	}
 }
