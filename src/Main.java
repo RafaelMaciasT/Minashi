@@ -34,7 +34,8 @@ public class Main {
 						
 						switch (empop) {
 						case 0:
-							
+							JOptionPane.showMessageDialog(null, "Ver / registro");
+							Empleado.agregar_mineral(null);
 							break;
 
 						case 1:
