@@ -33,4 +33,16 @@ public class Empleado extends Persona{
 		 Mineral a = new Mineral(minename,"a",1);
 		 JOptionPane.showMessageDialog(null, a);
 	}
+	
+	public static void reg_empleado(Empleado addem) {
+		
+		String empname=JOptionPane.showInputDialog("Ingrese nombre del empleado");
+		String empapell=JOptionPane.showInputDialog("Ingrese nombre del empleado");
+		String empmail=JOptionPane.showInputDialog("Ingrese nombre del empleado");
+		int empnro=0001;
+		int empin=Integer.parseInt(JOptionPane.showInputDialog("Ingrese pin"));
+		
+		Empleado agg_empleado= new Empleado(empname, empapell, empmail, empnro, empin);
+		JOptionPane.showMessageDialog(null, agg_empleado);
+	}
 }
