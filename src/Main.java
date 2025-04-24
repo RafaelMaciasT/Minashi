@@ -4,8 +4,6 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
-		JOptionPane.showMessageDialog(null, "Mensaje de Main");
 		 
 		String [] Menu= {"Ingresar", "Registrar","Salir"};
 		int opciones;
@@ -14,8 +12,9 @@ public class Main {
 			
 			
 		switch (opciones) {
+		
+		// SECCION DE ELECCION EMPLEADO - CLIENTE (INICIO DE SESION/INGRESO)
 		case 0:
-			
 			JOptionPane.showMessageDialog(null, "Seleccion de inicio de cuenta");
 			
 			String []Accmenu= {"Empleado" , "Cliente","Salir"};
@@ -24,6 +23,7 @@ public class Main {
 				accop=JOptionPane.showOptionDialog(null, "Selecciones el Tipo de Usuario", "Seleccion de Inicio", 0, 0, null, Accmenu, Accmenu[0]);
 				
 				switch (accop) {
+				//SECCION DE MENU EMPLEADO
 				case 0:
 					JOptionPane.showMessageDialog(null, "Menu Empleado");
 					
@@ -40,6 +40,7 @@ public class Main {
 							break;
 
 						case 1:
+							
 							break;
 						case 2:
 							break;
@@ -49,12 +50,11 @@ public class Main {
 						}
 					} while (empop!=3);
 					break;
-				
-
+				// SECCION DE MENU CLIENTE
 				case 1:
 					JOptionPane.showMessageDialog(null, "Menu Cliente");
 					
-					String []climenu= {"Seccion de Compra" , "","","Salir"};
+					String []climenu= {"Seccion de Compra" ,"Salir"};
 					int cliop;
 					do {
 						cliop=JOptionPane.showOptionDialog(null, "Seleccion Acciones", "Menu Empleado", 0, 0, null, climenu, climenu[0]);
@@ -65,14 +65,11 @@ public class Main {
 							break;
 
 						case 1:
-							break;
-						case 2:
-							break;
-						case 3:
+						
 						default:
 							break;
 						}
-					} while (cliop!=3);
+					} while (cliop!=1);
 					
 					break;
 				case 2: 
@@ -82,6 +79,7 @@ public class Main {
 			} while (accop!=2);
 			break;
 
+			//SECCION DE REGISTRO
 		case 1:
             JOptionPane.showMessageDialog(null, "Registro de Cuenta");
 			
@@ -91,10 +89,12 @@ public class Main {
 				regop=JOptionPane.showOptionDialog(null, "Tipo de Usuario para Registrar", "Seleccion de Registro", 0, 0, null, regmenu, regmenu[0]);
 				
 				switch (regop) {
+				//REGISTRO DE EMPLEADO
 				case 0:
 					Empleado.reg_empleado(null);
 					break;
 
+				// REGISTRO DE CLIENTE
 				case 1:
 					break;
 				case 2: 
