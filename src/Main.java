@@ -1,3 +1,5 @@
+import java.util.ResourceBundle.Control;
+
 import javax.swing.JOptionPane;
 
 public class Main {
@@ -27,22 +29,44 @@ public class Main {
 				case 0:
 					JOptionPane.showMessageDialog(null, "Menu Empleado");
 					
-					String []empmenu= {"Ver Stock" , "Control de Mineral","Seccion de Precios","Salir"};
+					String []empmenu= {"Control de Stock y venta" , "Control de Mineral","Recibir Minerales","Salir"};
 					int empop;
 					do {
 						empop=JOptionPane.showOptionDialog(null, "Seleccion Acciones", "Menu Empleado", 0, 0, null, empmenu, empmenu[0]);
-						
+						// CONTROL DE STOCK
 						switch (empop) {
+						
 						case 0:
-							JOptionPane.showMessageDialog(null, "Ver / registro");
-							Empleado.agregar_mineral(null);
+							JOptionPane.showMessageDialog(null, "Ver / Controlar Stock ");
+							String []estkmenu= {"Agregar productos" , "Cambiar precio","Cambiar cantidad en venta","Salir"};
+							int estkop;
+							do {
+								estkop=JOptionPane.showOptionDialog(null, "Seleccion Acciones", "Menu Empleado", 0, 0, null, estkmenu, estkmenu[0]);
+								
+								switch (estkop) {
+								case 0:
+									JOptionPane.showMessageDialog(null, "Agregar");
+									Empleado.agregar_mineral(null);
+									break;
+								case 1:
+									JOptionPane.showMessageDialog(null, "Cambio de precio");
+									break;
+								case 2:
+									JOptionPane.showMessageDialog(null, "Cambio de cantidad en en venta");
+									break;
+								case 3:
+								default:
+									break;
+								}
+							} while (estkop!=3);
 							
 							break;
 
 						case 1:
-							
+							JOptionPane.showMessageDialog(null, "Elija mineral para controlar su estado");
 							break;
 						case 2:
+							JOptionPane.showMessageDialog(null, "Lista de minerales a recibir");
 							break;
 						case 3:
 						default:
@@ -54,6 +78,7 @@ public class Main {
 				case 1:
 					JOptionPane.showMessageDialog(null, "Menu Cliente");
 					
+					// SECCION DE COMPRA
 					String []climenu= {"Seccion de Compra" ,"Salir"};
 					int cliop;
 					do {
@@ -61,7 +86,7 @@ public class Main {
 						
 						switch (cliop) {
 						case 0:
-							
+							JOptionPane.showMessageDialog(null, "Lista de productos en venta");
 							break;
 
 						case 1:
@@ -92,6 +117,10 @@ public class Main {
 				//REGISTRO DE EMPLEADO
 				case 0:
 					Empleado.reg_empleado(null);
+					
+					Cliente nuevo = new Cliente("Rafael", "Macias","MAIL", 1212, "CONTRA");
+					
+				
 					break;
 
 				// REGISTRO DE CLIENTE

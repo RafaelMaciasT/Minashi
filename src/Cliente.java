@@ -1,6 +1,6 @@
 import javax.swing.JOptionPane;
 
-public class Cliente extends Persona {
+public class Cliente extends Usuario {
 
 	private int nro_cliente;
 	private String contraseña;
@@ -50,6 +50,9 @@ public class Cliente extends Persona {
 			return false;
 
 		}
-	}
+		}
+private void revisar( String contra) {
+	JOptionPane.showMessageDialog(null, "Se reviso la contraseña");
+}
 	
 }

@@ -2,7 +2,7 @@ import java.util.LinkedList;
 
 import javax.swing.JOptionPane;
 
-public class Empleado extends Persona{
+public class Empleado extends Usuario{
 
 	private int nro_empleado;
 	private int pin;
@@ -30,7 +30,7 @@ public class Empleado extends Persona{
 	
 	public static void agregar_mineral (LinkedList<Mineral>mines) {
 		String minename= JOptionPane.showInputDialog("Ingrese nombre de mineral");
-		 Mineral a = new Mineral(minename,"a",1);
+		 Mineral a = new Mineral(minename,"a",1,1);
 		 JOptionPane.showMessageDialog(null, a);
 	}
 	
