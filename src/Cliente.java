@@ -1,3 +1,4 @@
+import javax.swing.JOptionPane;
 
 public class Cliente extends Persona {
 
@@ -24,6 +25,31 @@ public class Cliente extends Persona {
 	public String toString() {
 		return "Cliente [nro_cliente=" + nro_cliente + ", contraseña=" + contraseña + "]";
 	}
+   public static void reg_cliente(Cliente addcli) {
+		
+		String cliname=JOptionPane.showInputDialog("Ingrese nombre del cliente");
+		String cliapell=JOptionPane.showInputDialog("Ingrese apellido del cliente");
+		String climail=JOptionPane.showInputDialog("Ingrese mail del cliente");
+		int clinro=0001;
+		int cliin=Integer.parseInt(JOptionPane.showInputDialog("Ingrese contraseña"));
+		
+		
+		
+		Empleado agg_cliente= new Empleado(cliname, cliapell, climail, clinro, cliin);
+		JOptionPane.showMessageDialog(null, agg_cliente);
 	
+		
+	}
+   public boolean ValidarMail(String mail) {
+		if (mail.contains("@davinci.edu.ar")) {
+			
+			return true;
+
+		}else {
+			JOptionPane.showMessageDialog(null, "Mail invalido");
+			return false;
+
+		}
+	}
 	
 }
