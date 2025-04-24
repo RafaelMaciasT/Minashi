@@ -37,8 +37,8 @@ public class Empleado extends Persona{
 	public static void reg_empleado(Empleado addem) {
 		
 		String empname=JOptionPane.showInputDialog("Ingrese nombre del empleado");
-		String empapell=JOptionPane.showInputDialog("Ingrese nombre del empleado");
-		String empmail=JOptionPane.showInputDialog("Ingrese nombre del empleado");
+		String empapell=JOptionPane.showInputDialog("Ingrese apellido del empleado");
+		String empmail=JOptionPane.showInputDialog("Ingrese mail del empleado");
 		int empnro=0001;
 		int empin=Integer.parseInt(JOptionPane.showInputDialog("Ingrese pin"));
 		
