@@ -40,19 +40,5 @@ public class Cliente extends Usuario {
 	
 		
 	}
-   public boolean ValidarMail(String mail) {
-		if (mail.contains("@davinci.edu.ar")) {
-			
-			return true;
-
-		}else {
-			JOptionPane.showMessageDialog(null, "Mail invalido");
-			return false;
-
-		}
-		}
-private void revisar( String contra) {
-	JOptionPane.showMessageDialog(null, "Se reviso la contraseña");
-}
 	
 }

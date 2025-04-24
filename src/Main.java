@@ -27,8 +27,6 @@ public class Main {
 				switch (accop) {
 				//SECCION DE MENU EMPLEADO
 				case 0:
-					JOptionPane.showMessageDialog(null, "Menu Empleado");
-					
 					String []empmenu= {"Control de Stock y venta" , "Control de Mineral","Recibir Minerales","Salir"};
 					int empop;
 					do {
