@@ -36,6 +36,7 @@ public class Main {
 						case 0:
 							JOptionPane.showMessageDialog(null, "Ver / registro");
 							Empleado.agregar_mineral(null);
+							
 							break;
 
 						case 1:
@@ -91,7 +92,7 @@ public class Main {
 				
 				switch (regop) {
 				case 0:
-					
+					Empleado.reg_empleado(null);
 					break;
 
 				case 1:
