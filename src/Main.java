@@ -84,7 +84,30 @@ public class Main {
 						
 						switch (cliop) {
 						case 0:
+							String mensaje= JOptionPane.showInputDialog("Ingreso de prueba");
+							Cliente cliaa= new Cliente(mensaje, null, null, cliop, null);
 							JOptionPane.showMessageDialog(null, "Lista de productos en venta");
+						
+							boolean respuesta= cliaa.prueba(mensaje);
+							if (respuesta == true) {
+								JOptionPane.showMessageDialog(null, "Nada");
+							} else {
+								JOptionPane.showMessageDialog(null, "Algo");
+								
+								String []datvalor= {"Si paso ","Salir"};
+								int valor;
+								do {
+									valor=JOptionPane.showOptionDialog(null, "Seleccion Acciones", "Menu Empleado", 0, 0, null, datvalor, datvalor[0]);
+									switch (valor) {
+									case 0:
+										
+										break;
+									case 1:
+									default:
+										break;
+									}
+								} while (respuesta==false);
+							}
 							break;
 
 						case 1:

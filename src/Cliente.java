@@ -25,7 +25,7 @@ public class Cliente extends Usuario {
 	public String toString() {
 		return "Cliente [nro_cliente=" + nro_cliente + ", contraseña=" + contraseña + "]";
 	}
-   public static void reg_cliente(Cliente addcli) {
+   public static boolean reg_cliente(Cliente addcli) {
 		
 		String cliname=JOptionPane.showInputDialog("Ingrese nombre del cliente");
 		String cliapell=JOptionPane.showInputDialog("Ingrese apellido del cliente");
@@ -37,8 +37,19 @@ public class Cliente extends Usuario {
 		
 		Empleado agg_cliente= new Empleado(cliname, cliapell, climail, clinro, cliin);
 		JOptionPane.showMessageDialog(null, agg_cliente);
-	
+	return true;
 		
 	}
+   
+   public static boolean prueba(String a) {
+	   if (a.isEmpty()) {
+		JOptionPane.showMessageDialog(null, "No se ingreso datos");
+		return true;
+	} else {
+		JOptionPane.showMessageDialog(null, "Se ingreso: " + a);
+		return false;
+	}
+   }
+   
 	
 }
