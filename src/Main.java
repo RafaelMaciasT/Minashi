@@ -89,6 +89,7 @@ public class Main {
 							JOptionPane.showMessageDialog(null, "Lista de productos en venta");
 						
 							boolean respuesta= cliaa.prueba(mensaje);
+							JOptionPane.showMessageDialog(null,respuesta);
 							if (respuesta == true) {
 								JOptionPane.showMessageDialog(null, "Nada");
 							} else {
@@ -106,7 +107,7 @@ public class Main {
 									default:
 										break;
 									}
-								} while (respuesta==false);
+								} while (valor!=1);
 							}
 							break;
 
