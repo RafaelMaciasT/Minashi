@@ -30,7 +30,7 @@ public class Empleado extends Usuario{
 	
 	public static void agregar_mineral (LinkedList<Mineral>mines) {
 		String minename= JOptionPane.showInputDialog("Ingrese nombre de mineral");
-		 Mineral a = new Mineral(minename,"a",1,1);
+		 Mineral a = new Mineral(minename,"a",1);
 		 JOptionPane.showMessageDialog(null, a);
 	}
 	
