@@ -6,163 +6,119 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		 
-		String [] Menu= {"Ingresar", "Registrar","Salir"};
-		int opciones;
-		do {
-			opciones=JOptionPane.showOptionDialog(null, "Menu", "Opciones de menu", 0, 0, null, Menu, Menu[0]);
-			
-			
-		switch (opciones) {
 		
-		// SECCION DE ELECCION EMPLEADO - CLIENTE (INICIO DE SESION/INGRESO)
-		case 0:
-			JOptionPane.showMessageDialog(null, "Seleccion de inicio de cuenta");
-			
-			String []Accmenu= {"Empleado" , "Cliente","Salir"};
-			int accop;
-			do {
-				accop=JOptionPane.showOptionDialog(null, "Selecciones el Tipo de Usuario", "Seleccion de Inicio", 0, 0, null, Accmenu, Accmenu[0]);
-				
-				switch (accop) {
-				//SECCION DE MENU EMPLEADO
-				case 0:
-					String []empmenu= {"Control de Stock y venta" , "Control de Mineral","Recibir Minerales","Salir"};
-					int empop;
-					do {
-						empop=JOptionPane.showOptionDialog(null, "Seleccion Acciones", "Menu Empleado", 0, 0, null, empmenu, empmenu[0]);
-						// CONTROL DE STOCK
-						switch (empop) {
 						
-						case 0:
-							JOptionPane.showMessageDialog(null, "Ver / Controlar Stock ");
-							String []estkmenu= {"Agregar productos" , "Cambiar precio","Cambiar cantidad en venta","Salir"};
-							int estkop;
+	
+		
+		String [] opcion= {"Inciar", "Registro","Salir"};
+		int selop;
+		do {
+			selop=JOptionPane.showOptionDialog(null, "Seleccion", null, 0, 0, null, opcion, opcion[0]);
+			switch (selop ) {
+			case 0:
+				
+				// SELECCION TIPO DE USUARIO
+				String [] opini= {"Cliente", "Empleado","Salir"};
+				int selini;
+				do {
+					selini=JOptionPane.showOptionDialog(null, "Seleccion", null, 0, 0, null, opini, opini[0]);
+					switch (selini) {
+					// OPCION DE CLIENTE
+					case 0:
+						// Nombre = Rafael   mail= rafa@minashi.com  contra= davinci
+						Cliente nvlcient= new Cliente("", "", "", 0);
+						JOptionPane.showMessageDialog(null, "Lista de productos en venta");
+					String nomb=JOptionPane.showInputDialog("Ingrese nombre");
+					String mail=JOptionPane.showInputDialog("Ingrese Mail");
+					String contra=JOptionPane.showInputDialog("Ingrese Contraseña");
+						boolean respuesta= nvlcient.cliente_ingreso(nomb, mail, contra);
+						//JOptionPane.showMessageDialog(null,respuesta);
+						if (respuesta == true) {
+							JOptionPane.showMessageDialog(null, "No se pudo ingresar");
+						} else {
+							JOptionPane.showMessageDialog(null, "Se pudo ingresar");
+							
+							String []datvalor= {"Comprar Mineral" , "Salir"};
+							int valor;
 							do {
-								estkop=JOptionPane.showOptionDialog(null, "Seleccion Acciones", "Menu Empleado", 0, 0, null, estkmenu, estkmenu[0]);
-								
-								switch (estkop) {
+								valor=JOptionPane.showOptionDialog(null, "Seleccion Acciones", "Menu Empleado", 0, 0, null, datvalor, datvalor[0]);
+								switch (valor) {
+								// SECCION COMPRA
 								case 0:
-									JOptionPane.showMessageDialog(null, "Agregar");
-									Empleado.agregar_mineral(null);
+									JOptionPane.showMessageDialog(null, "Se mostrara una lista con los Minerales para poder comprarlo");
 									break;
 								case 1:
-									JOptionPane.showMessageDialog(null, "Cambio de precio");
-									break;
-								case 2:
-									JOptionPane.showMessageDialog(null, "Cambio de cantidad en en venta");
-									break;
-								case 3:
+								// SALIR
 								default:
 									break;
 								}
-							} while (estkop!=3);
+							} while (valor!=1);
+						}
+						break;
+						
+					case 1:
+						// OPCION DE EMPLEADO
+						// Nombre = Artem   mail= artem@minashi.com  pin=1234
+						Empleado nvlemp= new Empleado("", "", 0, 0);
+						JOptionPane.showMessageDialog(null, "Lista de productos en venta");
+					String nombemp=JOptionPane.showInputDialog("Ingrese nombre");
+					String mailemp=JOptionPane.showInputDialog("Ingrese Mail");
+					int emp= Integer.parseInt(JOptionPane.showInputDialog("Ingrese pin"));
+						boolean respuestaemp= nvlemp.empleado_ingreso(nombemp, mailemp, emp);
+					
+						if (respuestaemp == true) {
+							JOptionPane.showMessageDialog(null, "No se pudo ingresar");
+						} else {
+							JOptionPane.showMessageDialog(null, "Se pudo ingresar");
 							
-							break;
-
-						case 1:
-							JOptionPane.showMessageDialog(null, "Elija mineral para controlar su estado");
-							break;
-						case 2:
-							JOptionPane.showMessageDialog(null, "Lista de minerales a recibir");
-							break;
-						case 3:
-						default:
-							break;
+							String []datvalor= {"Recibir" , "Catalogar Mineral","Colocar Precio","Consulta de Stock","Salir"};
+							int valor;
+							do {
+								valor=JOptionPane.showOptionDialog(null, "Seleccion Acciones", "Menu Empleado", 0, 0, null, datvalor, datvalor[0]);
+								switch (valor) {
+								// RECIBIR PRODUCTO
+								case 0:
+									JOptionPane.showMessageDialog(null, "Opcion para recibir productos");
+									break;
+									// CATALOGAR
+								case 1:
+									JOptionPane.showMessageDialog(null, "Opcion para Catalogar Minerales segun pureza");
+									break;
+									// COLOCAR PRECIO
+								case 2:
+									JOptionPane.showMessageDialog(null, "Seccion para Colocar precio / Editar");
+									break;
+									// CONSULTA STOCK
+								case 3:
+									JOptionPane.showMessageDialog(null, "Opcion para Consulta de Stock");
+									break;
+								case 4:
+									// SALIR
+								default:
+									break;
+								}
+							} while (valor!=4);
 						}
-					} while (empop!=3);
-					break;
-				// SECCION DE MENU CLIENTE
-				case 1:
-					JOptionPane.showMessageDialog(null, "Menu Cliente");
-					
-					// SECCION DE COMPRA
-					String []climenu= {"Seccion de Compra" ,"Salir"};
-					int cliop;
-					do {
-						cliop=JOptionPane.showOptionDialog(null, "Seleccion Acciones", "Menu Empleado", 0, 0, null, climenu, climenu[0]);
-						
-						switch (cliop) {
-						case 0:
-							String mensaje= JOptionPane.showInputDialog("Ingreso de prueba");
-							Cliente cliaa= new Cliente(mensaje, null, null, cliop, null);
-							JOptionPane.showMessageDialog(null, "Lista de productos en venta");
-						
-							boolean respuesta= cliaa.prueba(mensaje);
-							JOptionPane.showMessageDialog(null,respuesta);
-							if (respuesta == true) {
-								JOptionPane.showMessageDialog(null, "Nada");
-							} else {
-								JOptionPane.showMessageDialog(null, "Algo");
-								
-								String []datvalor= {"Si paso ","Salir"};
-								int valor;
-								do {
-									valor=JOptionPane.showOptionDialog(null, "Seleccion Acciones", "Menu Empleado", 0, 0, null, datvalor, datvalor[0]);
-									switch (valor) {
-									case 0:
-										
-										break;
-									case 1:
-									default:
-										break;
-									}
-								} while (valor!=1);
-							}
-							break;
-
-						case 1:
-						
-						default:
-							break;
-						}
-					} while (cliop!=1);
-					
-					break;
-				case 2: 
-				default:
-					break;
-				}
-			} while (accop!=2);
-			break;
-
-			//SECCION DE REGISTRO
-		case 1:
-            JOptionPane.showMessageDialog(null, "Registro de Cuenta");
-			
-			String []regmenu= {"Empleado" , "Cliente","Salir"};
-			int regop;
-			do {
-				regop=JOptionPane.showOptionDialog(null, "Tipo de Usuario para Registrar", "Seleccion de Registro", 0, 0, null, regmenu, regmenu[0]);
+					default:
+						break;
+					}
+							} while (selini!=2);
 				
-				switch (regop) {
-				//REGISTRO DE EMPLEADO
-				case 0:
-					Empleado.reg_empleado(null);
-					
-					Cliente nuevo = new Cliente("Rafael", "Macias","MAIL", 1212, "CONTRA");
-					
-				
-					break;
-
-				// REGISTRO DE CLIENTE
-				case 1:
-					break;
-				case 2: 
-				default:
-					break;
-				}
-			} while (regop!=2);
-			break;
-			
-			
-		case 2:
-			
-		default:
-			break;
-		}
-		} while (opciones!=2);
+				break;
+			case 1:
+			// AREA DE REGISTRO - AUN NO DISPONIBLE
+			JOptionPane.showMessageDialog(null, "Zona registro" + "\n" + "Aun No disponible ");
+				break;
+			case 2:
+			// SALIR
+			default:
+				break;
+			}
+		} while (selop!=2 );
 		
-	}
+			
+	}	
 
 }
+
+	

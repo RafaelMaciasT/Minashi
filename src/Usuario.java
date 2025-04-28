@@ -1,13 +1,11 @@
 
 public class Usuario {
 	private String nombre;
-	private String apellido;
 	private String mail;
-
-	public Usuario(String nombre, String apellido, String mail) {
+	
+	public Usuario(String nombre, String mail) {
 		super();
 		this.nombre = nombre;
-		this.apellido = apellido;
 		this.mail = mail;
 	}
 	public String getNombre() {
@@ -15,12 +13,6 @@ public class Usuario {
 	}
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
-	}
-	public String getApellido() {
-		return apellido;
-	}
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
 	}
 	public String getMail() {
 		return mail;
@@ -30,6 +22,6 @@ public class Usuario {
 	}
 	@Override
 	public String toString() {
-		return "Persona [nombre=" + nombre + ", apellido=" + apellido + ", mail=" + mail + "]";
+		return "User [nombre=" + nombre + ", mail=" + mail + "]";
 	}
 }

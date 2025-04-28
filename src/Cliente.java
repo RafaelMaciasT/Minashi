@@ -2,12 +2,19 @@ import javax.swing.JOptionPane;
 
 public class Cliente extends Usuario {
 
+	private String contra;
 	private int nro_cliente;
-	private String contraseña;
-	public Cliente(String nombre, String apellido, String mail, int nro_cliente, String contraseña) {
-		super(nombre, apellido, mail);
+	
+	public Cliente(String nombre, String mail, String contra, int nro_cliente) {
+		super(nombre, mail);
+		this.contra = contra;
 		this.nro_cliente = nro_cliente;
-		this.contraseña = contraseña;
+	}
+	public String getContra() {
+		return contra;
+	}
+	public void setContra(String contra) {
+		this.contra = contra;
 	}
 	public int getNro_cliente() {
 		return nro_cliente;
@@ -15,41 +22,22 @@ public class Cliente extends Usuario {
 	public void setNro_cliente(int nro_cliente) {
 		this.nro_cliente = nro_cliente;
 	}
-	public String getContraseña() {
-		return contraseña;
-	}
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
-	}
 	@Override
 	public String toString() {
-		return "Cliente [nro_cliente=" + nro_cliente + ", contraseña=" + contraseña + "]";
+		return "Cliente [contra=" + contra + ", nro_cliente=" + nro_cliente + "]";
 	}
-   public static boolean reg_cliente(Cliente addcli) {
+	
+	public static boolean cliente_ingreso ( String a , String b , String c ) {
+		// Nombre = Rafael   mail= rafa@minashi.com  contra= davinci
 		
-		String cliname=JOptionPane.showInputDialog("Ingrese nombre del cliente");
-		String cliapell=JOptionPane.showInputDialog("Ingrese apellido del cliente");
-		String climail=JOptionPane.showInputDialog("Ingrese mail del cliente");
-		int clinro=0001;
-		int cliin=Integer.parseInt(JOptionPane.showInputDialog("Ingrese contraseña"));
-		
-		
-		
-		Empleado agg_cliente= new Empleado(cliname, cliapell, climail, clinro, cliin);
-		JOptionPane.showMessageDialog(null, agg_cliente);
-	return true;
+		if (a.isEmpty() && a!= "Rafael" || b.isEmpty() && b != "rafa@minashi.com"|| c.isEmpty() && c != "davinci") {
+			JOptionPane.showMessageDialog(null, "No Pudo ingresa, datos incorrectos");
+			return true;
+		} else {
+			JOptionPane.showMessageDialog(null, "Ingreso correcto");
+			return false;
+		}
 		
 	}
-   
-   public static boolean prueba(String a) {
-	   if (a.isEmpty()) {
-		JOptionPane.showMessageDialog(null, "No se ingreso datos");
-		return true;
-	} else {
-		JOptionPane.showMessageDialog(null, "Se ingreso: " + a);
-		return false;
-	}
-   }
-   
 	
 }
